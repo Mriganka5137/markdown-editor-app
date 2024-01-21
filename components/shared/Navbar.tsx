@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className=" w-full bg-color-800 flex items-center  justify-between h-[75px] px-5">
       <div className=" flex items-center gap-5">
         {/* <MenuHamburger setShowSidebar={setShowSidebar} /> */}
-        <Image alt="logo" src={logo} className=" h-4 w-fit" />
+        <Image alt="logo" src={logo} className=" h-4 w-fit max-lg:hidden" />
         <DocumentName />
       </div>
       <div className=" flex items-center px-5 gap-6">

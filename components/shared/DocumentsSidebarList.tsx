@@ -61,8 +61,9 @@ const documentsList = [
 
 const DocumentsSidebarList = () => {
   // QUery for documents and get the list here
+
   return (
-    <div className="flex flex-col text-color-100 gap-4">
+    <div className="flex flex-col text-color-100 gap-4 w-full pl-10">
       {documentsList.map((document) => (
         <Link
           key={document.id}

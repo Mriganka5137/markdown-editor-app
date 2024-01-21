@@ -1,13 +1,16 @@
 "use client";
-import React, { useState } from "react";
-import Sidebar from "./Sidebar";
+import React, { PropsWithChildren, useState } from "react";
 import Navbar from "./Navbar";
 
-const NavbarLayout = () => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const NavbarLayout = ({ children }: Props) => {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
     <div className=" flex items-start">
-      <Sidebar showSidebar={showSidebar} />
+      {children}
       <Navbar setShowSidebar={setShowSidebar} showSidebar={showSidebar} />
     </div>
   );
