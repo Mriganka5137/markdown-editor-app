@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Roboto, Roboto_Slab, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/shared/Navbar";
+import Sidebar from "@/components/shared/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -35,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${robotoMono.variable} ${robotoSlab.variable}`}
+        className={`${roboto.variable} ${robotoMono.variable} ${robotoSlab.variable} `}
       >
         {children}
       </body>

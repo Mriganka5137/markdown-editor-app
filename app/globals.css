@@ -24,6 +24,6 @@
     @apply p-0 m-0 box-border;
   }
   body {
-    @apply bg-color-100 text-color-1000 dark:bg-color-900 dark:text-color-100 container mx-auto;
+    @apply bg-color-100 text-color-1000 dark:bg-color-900 dark:text-color-100;
   }
 }
