@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Roboto, Roboto_Slab, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
-import Sidebar from "@/components/shared/Sidebar";
 
-const inter = Inter({ subsets: ["latin"] });
+import { ThemeProvider } from "@/components/theme/theme-provider";
+
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
@@ -35,11 +34,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${roboto.variable} ${robotoMono.variable} ${robotoSlab.variable} `}
       >
-        {children}
+        <ThemeProvider
+          disableTransitionOnChange
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
