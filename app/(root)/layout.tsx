@@ -4,9 +4,9 @@ import { PropsWithChildren } from "react";
 
 const layout = ({ children }: PropsWithChildren) => {
   return (
-    <div className="flex  h-lvh w-full">
+    <div className="flex">
       <Sidebar />
-      <div className=" flex flex-col w-full">
+      <div className=" flex flex-col w-full h-screen bg-red-200">
         <Navbar />
         {children}
       </div>

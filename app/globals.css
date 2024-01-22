@@ -26,6 +26,11 @@
   body {
     @apply bg-color-100 text-color-1000 dark:bg-color-1000 dark:text-color-100;
   }
+
+  .document-page {
+    height: calc(100vh - 75px);
+    background-color: greenyellow;
+  }
 }
 
 @layer utilities {

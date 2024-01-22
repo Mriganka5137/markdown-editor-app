@@ -9,7 +9,7 @@ interface Props {
 
 const page = ({ params: { id } }: Props) => {
   return (
-    <div className="h-dvh w-full">
+    <div className="w-full document-page border border-yellow-200 overflow-y-hidden">
       <MarkdownContainer />
     </div>
   );
