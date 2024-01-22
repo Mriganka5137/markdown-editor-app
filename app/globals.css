@@ -26,11 +26,6 @@
   body {
     @apply bg-color-100 text-color-1000 dark:bg-color-1000 dark:text-color-100;
   }
-
-  .document-container {
-    max-height: var(100vh - 50px);
-    border: 2px solid green;
-  }
 }
 
 @layer utilities {

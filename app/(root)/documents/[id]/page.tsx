@@ -9,7 +9,7 @@ interface Props {
 
 const page = ({ params: { id } }: Props) => {
   return (
-    <div className=" ">
+    <div className="h-dvh w-full">
       <MarkdownContainer />
     </div>
   );
