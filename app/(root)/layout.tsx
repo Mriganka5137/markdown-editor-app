@@ -4,7 +4,7 @@ import { PropsWithChildren } from "react";
 
 const layout = ({ children }: PropsWithChildren) => {
   return (
-    <div className="flex">
+    <div className="flex document-container overflow-y-auto ">
       <Sidebar />
       <div className=" flex flex-col w-full">
         <Navbar />

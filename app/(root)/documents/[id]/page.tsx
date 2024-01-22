@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@/components/ui/resizable";
 import MarkdownContainer from "@/components/shared/MarkdownContainer";
+
 interface Props {
   params: {
     id: string;
@@ -13,7 +9,7 @@ interface Props {
 
 const page = ({ params: { id } }: Props) => {
   return (
-    <div className=" container mx-auto max-h-full h-full ">
+    <div className=" ">
       <MarkdownContainer />
     </div>
   );
