@@ -15,7 +15,7 @@ const MarkDown = ({ markdown, setMarkdown }: Props) => {
         autoFocus
         value={markdown}
         onChange={(e) => setMarkdown(e.target.value)}
-        placeholder="Welcome"
+        placeholder="Type Here"
         className=" focus:outline-none  font-roboto-mono text-color-700 dark:text-color-400 px-4 py-2.5 tracking-wider bg-transparent  resize-none  text-lg h-full overflow-y-auto"
       />
     </div>
