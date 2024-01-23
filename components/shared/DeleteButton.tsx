@@ -24,8 +24,8 @@ const DeleteButton = () => {
   const { id, name } = useMarkdown((state) => state);
   const handleDelete = async () => {
     await deleteDocumentByID({ id });
-    // Show Toast
     router.push("/documents/new");
+    // Show Toast
   };
 
   return (
