@@ -35,10 +35,8 @@ const DeleteButton = () => {
 
   return (
     <AlertDialog>
-      <AlertDialogTrigger>
-        <button disabled={path === "/documents/new"}>
-          <Image src={deleteIcon} alt="delete" className="w-4 h-5 " />
-        </button>
+      <AlertDialogTrigger hidden={path === "/documents/new"}>
+        <Image src={deleteIcon} alt="delete" className="w-4 h-5 " />
       </AlertDialogTrigger>
       <AlertDialogContent className="border-none bg-color-100 dark:bg-color-900  max-w-[350px]">
         <AlertDialogHeader>
