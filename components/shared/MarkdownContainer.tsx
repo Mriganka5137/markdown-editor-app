@@ -1,17 +1,39 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import MarkDown from "./MarkDown";
 import Preview from "./Preview";
 import { useMarkdown } from "@/zustand/store";
-const MarkdownContainer = () => {
-  const { markdown, setMarkdown } = useMarkdown((state) => state);
+import { usePathname, useRouter } from "next/navigation";
+
+interface dataProps {
+  content?: string;
+  name?: string;
+  id?: string;
+}
+
+const MarkdownContainer = ({ content, name, id }: dataProps) => {
+  const path = usePathname();
+  const { markdown, setMarkdown, setName, setID } = useMarkdown(
+    (state) => state
+  );
+
+  useEffect(() => {
+    if (path === "/documents/new") {
+      setName("Untitled.md");
+      setMarkdown("");
+    }
+    if (content && name && id) {
+      setID(id);
+      setMarkdown(content);
+      setName(name);
+    }
+  }, [content]);
 
   const [viewMarkDown, setViewMarkDown] = useState(true);
 
-  const handleMarkdownChange = (e: React.ChangeEvent<HTMLInputElement>) => {};
   return (
-    <div className=" bg-color-100 dark:bg-color-1000 flex w-full h-full overflow-y-hidden justify-center">
+    <div className="flex justify-center w-full h-full overflow-y-hidden bg-color-100 dark:bg-color-1000">
       {viewMarkDown && (
         <MarkDown markdown={markdown} setMarkdown={setMarkdown} />
       )}

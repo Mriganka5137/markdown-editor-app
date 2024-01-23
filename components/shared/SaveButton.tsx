@@ -4,14 +4,15 @@ import saveIcon from "@/public/assets/icon-save.svg";
 import Image from "next/image";
 import { useMarkdown } from "@/zustand/store";
 import { usePathname, useRouter } from "next/navigation";
-import { createDocument } from "@/lib/actions/Document.action";
+import {
+  createDocument,
+  updateDocumentByID,
+} from "@/lib/actions/Document.action";
 const SaveButton = () => {
   // I have the markdown content here
   const router = useRouter();
-  const markdown = useMarkdown((state) => state.markdown);
-  const name = useMarkdown((state) => state.name);
+  const { markdown, id, name } = useMarkdown((state) => state);
   const path = usePathname();
-  console.log(path);
   // console.log(markdown, name);
   // On click of this button, I want to save the markdown content to the database
   const handleSubmit = async () => {
@@ -22,22 +23,21 @@ const SaveButton = () => {
 
       router.push(`/documents/${id}`);
     } else {
-      //update the document -->Show toast success
-      console.log("update document");
+      //update the document with the id
+      await updateDocumentByID({
+        id,
+        name,
+        content: markdown,
+      });
     }
   };
-
-  //if the url is /documents/new, I want to create a new document
-  // After creating the document, I want to redirect to /documents/:id
-
-  //if the url is /documents/:id, I want to update the document with the id
 
   return (
     <button
       className=" bg-color-orange hover:bg-color-orange-hover px-4 py-3 flex items-center gap-2 rounded-[4px] text-color-100"
       onClick={handleSubmit}
     >
-      <Image src={saveIcon} alt="save" className=" h-4 w-4" />
+      <Image src={saveIcon} alt="save" className="w-4 h-4 " />
       <span className="max-md:hidden">Save Changes</span>
     </button>
   );

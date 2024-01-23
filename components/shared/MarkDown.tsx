@@ -1,13 +1,13 @@
 import React from "react";
 import { Textarea } from "../ui/textarea";
 interface Props {
-  markdown: string;
+  markdown?: string;
   setMarkdown: (markdown: string) => void;
 }
 
 const MarkDown = ({ markdown, setMarkdown }: Props) => {
   return (
-    <div className=" w-1/2 h-full border-r border-color-300 dark:border-color-600 overflow-y-hidden">
+    <div className="w-1/2 h-full overflow-y-hidden border-r  border-color-300 dark:border-color-600">
       <h2 className=" text-color-500 text-[14px] uppercase px-4 py-2.5 bg-color-200 tracking-widest dark:bg-color-900 dark:text-color-400">
         Markdown
       </h2>
