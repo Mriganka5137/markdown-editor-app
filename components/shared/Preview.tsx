@@ -11,11 +11,17 @@ interface Props {
   viewMarkDown: boolean;
 }
 const Preview = ({ markdown, setViewMarkDown, viewMarkDown }: Props) => {
+  if (viewMarkDown) {
+    if (window.innerWidth < 768) {
+      return;
+    }
+  }
+
   return (
     <div
       className={cn(
-        " h-full overflow-y-auto  ",
-        viewMarkDown ? "w-1/2" : "w-full "
+        "h-full overflow-y-auto ",
+        viewMarkDown ? "w-1/2" : "w-full"
       )}
     >
       <div className=" flex justify-between items-center dark:bg-color-900 bg-color-200 px-3 ">

@@ -36,7 +36,12 @@ const MarkdownContainer = ({ content, name, id }: dataProps) => {
   return (
     <div className="flex justify-center w-full h-full overflow-y-hidden bg-color-100 dark:bg-color-1000">
       {viewMarkDown && (
-        <MarkDown markdown={markdown} setMarkdown={setMarkdown} />
+        <MarkDown
+          markdown={markdown}
+          setMarkdown={setMarkdown}
+          viewMarkDown={viewMarkDown}
+          setViewMarkDown={setViewMarkDown}
+        />
       )}
 
       <Preview

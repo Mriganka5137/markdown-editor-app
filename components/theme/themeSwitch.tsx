@@ -12,7 +12,7 @@ const themeSwitch = () => {
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
   return (
-    <div className=" flex w-fit  gap-3 items-center ">
+    <div className=" flex w-fit  gap-3 items-center  ">
       <MoonIcon
         className={cn(
           "w-6 h-6 text-gray-600",

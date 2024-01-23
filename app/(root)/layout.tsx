@@ -9,7 +9,7 @@ const layout = ({ children }: layoutProps) => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="flex flex-col w-full h-screen bg-red-200 ">
+      <div className="flex flex-col w-full h-screen  ">
         <Navbar />
         {children}
       </div>

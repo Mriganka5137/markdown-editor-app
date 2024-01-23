@@ -16,7 +16,7 @@ const DocumentName = () => {
           type="text"
           name=""
           id=""
-          className=" bg-transparent focus-within:outline-none text-color-100 font-normal font-roboto text-[15px] focus-within:border-color-100 border-b border-transparent w-[200px] pb-1 cursor-text"
+          className=" bg-transparent focus-within:outline-none text-color-100 font-normal font-roboto text-[15px] focus-within:border-color-100 border-b border-transparent w-[200px] pb-1 cursor-text max-md:w-[100px]"
           placeholder={name}
           value={name}
           onChange={(e) => setName(e.target.value)}
