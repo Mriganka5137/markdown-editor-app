@@ -5,7 +5,7 @@ import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 SunIcon;
-const themeSwitch = () => {
+const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme: theme } = useTheme();
 
@@ -39,4 +39,4 @@ const themeSwitch = () => {
   );
 };
 
-export default themeSwitch;
+export default ThemeSwitch;
