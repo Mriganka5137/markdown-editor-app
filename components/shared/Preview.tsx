@@ -47,7 +47,7 @@ const Preview = ({ markdown, setViewMarkDown, viewMarkDown }: Props) => {
       </div>
       <ReactMarkdown
         className={cn(
-          "font-roboto-slab prose tracking-widest p-4 dark:text-color-200 w-full ",
+          "font-roboto-slab prose tracking-widest p-4 dark:text-color-200 w-full markdown",
           !viewMarkDown && "mx-auto"
         )}
       >

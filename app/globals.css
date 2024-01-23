@@ -33,4 +33,29 @@
 }
 
 @layer utilities {
+  .markdown h1 {
+    @apply text-color-900 dark:text-color-100 font-roboto-slab;
+  }
+
+  .markdown h2 {
+    @apply text-color-700 dark:text-color-200 font-light;
+  }
+
+  .markdown h3 {
+    @apply text-color-700 dark:text-color-200 font-bold text-[24px];
+  }
+  .markdown h6 {
+    @apply text-color-orange  font-bold text-[14px];
+  }
+  .markdown p {
+    @apply text-color-500 dark:text-color-300;
+  }
+
+  .markdown ul {
+    @apply text-color-500 dark:text-color-300 text-[14px];
+  }
+
+  .markdown blockquote {
+    @apply text-color-800 dark:text-color-300 text-[14px] border-l-4 border-color-orange  bg-color-200 dark:bg-color-800 rounded-md py-2 px-4;
+  }
 }
