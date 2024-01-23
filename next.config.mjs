@@ -1,4 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+export default {
+  redirects: async () => [
+    {
+      source: "/",
+      destination: "/documents/new",
+      permanent: true, // Use true for permanent redirect (optional)
+    },
+  ],
+};
