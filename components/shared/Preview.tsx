@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import showIcon from "@/public/assets/icon-show-preview.svg";
@@ -11,16 +12,10 @@ interface Props {
   viewMarkDown: boolean;
 }
 const Preview = ({ markdown, setViewMarkDown, viewMarkDown }: Props) => {
-  if (window.innerWidth < 768) {
-    if (viewMarkDown) {
-      return;
-    }
-  }
-
   return (
     <div
       className={cn(
-        "h-full overflow-y-auto ",
+        "h-full overflow-y-auto max-md:w-full ",
         viewMarkDown ? "w-1/2" : "w-full"
       )}
     >

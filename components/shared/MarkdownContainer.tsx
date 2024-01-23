@@ -34,7 +34,7 @@ const MarkdownContainer = ({ content, name, id }: dataProps) => {
   const [viewMarkDown, setViewMarkDown] = useState(true);
 
   return (
-    <div className="flex justify-center w-full h-full overflow-y-hidden bg-color-100 dark:bg-color-1000">
+    <div className="flex justify-center w-full h-full overflow-y-hidden bg-color-100 dark:bg-color-1000 max-md:flex-col">
       {viewMarkDown && (
         <MarkDown
           markdown={markdown}
