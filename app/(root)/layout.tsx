@@ -1,6 +1,5 @@
 import Navbar from "@/components/shared/Navbar";
 import Sidebar from "@/components/shared/Sidebar";
-
 interface layoutProps {
   children: React.ReactNode;
 }

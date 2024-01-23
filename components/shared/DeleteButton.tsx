@@ -16,22 +16,27 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "../ui/alert-dialog";
+import { useToast } from "../ui/use-toast";
 const DeleteButton = () => {
   const path = usePathname();
   const router = useRouter();
+  const { toast } = useToast();
 
-  if (path === "/documents/new") return null;
   const { id, name } = useMarkdown((state) => state);
   const handleDelete = async () => {
     await deleteDocumentByID({ id });
+    toast({
+      title: "Document deleted successfully",
+      description: "You can now create a new document",
+      variant: "warning",
+    });
     router.push("/documents/new");
-    // Show Toast
   };
 
   return (
     <AlertDialog>
       <AlertDialogTrigger>
-        <button>
+        <button disabled={path === "/documents/new"}>
           <Image src={deleteIcon} alt="delete" className="w-4 h-5 " />
         </button>
       </AlertDialogTrigger>

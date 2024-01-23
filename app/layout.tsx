@@ -3,6 +3,7 @@ import { Inter, Roboto, Roboto_Slab, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
           enableSystem
         >
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

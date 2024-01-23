@@ -11,8 +11,8 @@ interface Props {
   viewMarkDown: boolean;
 }
 const Preview = ({ markdown, setViewMarkDown, viewMarkDown }: Props) => {
-  if (viewMarkDown) {
-    if (window.innerWidth < 768) {
+  if (window.innerWidth < 768) {
+    if (viewMarkDown) {
       return;
     }
   }

@@ -8,26 +8,37 @@ import {
   createDocument,
   updateDocumentByID,
 } from "@/lib/actions/Document.action";
+import { useToast } from "../ui/use-toast";
 const SaveButton = () => {
   // I have the markdown content here
   const router = useRouter();
   const { markdown, id, name } = useMarkdown((state) => state);
   const path = usePathname();
-  // console.log(markdown, name);
-  // On click of this button, I want to save the markdown content to the database
+  const { toast } = useToast();
+
   const handleSubmit = async () => {
     if (path === "/documents/new") {
       if (markdown === "") return; //show toast error
       //create a new document -->Show toast success
       const id = await createDocument({ name, content: markdown });
-
       router.push(`/documents/${id}`);
+      toast({
+        title: "Document created successfully",
+        description: "You can now access it from the sidebar",
+        variant: "success",
+      });
     } else {
       //update the document with the id
       await updateDocumentByID({
         id,
         name,
         content: markdown,
+      });
+
+      toast({
+        title: "Document updated successfully",
+        description: "You can now access it from the sidebar",
+        variant: "success",
       });
     }
   };
