@@ -2,7 +2,7 @@ import React from "react";
 import { Textarea } from "../ui/textarea";
 interface Props {
   markdown: string;
-  setMarkdown: React.Dispatch<React.SetStateAction<string>>;
+  setMarkdown: (markdown: string) => void;
 }
 
 const MarkDown = ({ markdown, setMarkdown }: Props) => {

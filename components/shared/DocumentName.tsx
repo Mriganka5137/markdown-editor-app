@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import documentIcon from "@/public/assets/icon-document.svg";
 import Image from "next/image";
+import { useMarkdown } from "@/zustand/store";
 const DocumentName = () => {
+  const { name, setName } = useMarkdown();
   return (
     <div className=" flex  items-center gap-2.5">
       <Image src={documentIcon} alt="document" className="h-4" />
@@ -14,7 +17,8 @@ const DocumentName = () => {
           name=""
           id=""
           className=" bg-transparent focus-within:outline-none text-color-100 font-normal font-roboto text-[15px] focus-within:border-color-100 border-b border-transparent w-[200px] pb-1 cursor-text"
-          placeholder="Untitled Document.md"
+          placeholder={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
     </div>

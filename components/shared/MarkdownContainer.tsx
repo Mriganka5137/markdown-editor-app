@@ -3,8 +3,10 @@ import React, { useState } from "react";
 
 import MarkDown from "./MarkDown";
 import Preview from "./Preview";
+import { useMarkdown } from "@/zustand/store";
 const MarkdownContainer = () => {
-  const [markdown, setMarkdown] = useState("");
+  const { markdown, setMarkdown } = useMarkdown((state) => state);
+
   const [viewMarkDown, setViewMarkDown] = useState(true);
 
   const handleMarkdownChange = (e: React.ChangeEvent<HTMLInputElement>) => {};
