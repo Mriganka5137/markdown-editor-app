@@ -24,7 +24,7 @@ export async function createDocument(params: CreateDocumentParams) {
 export async function getAllDocuments() {
   try {
     await connectToDatabase();
-    const documents = await DocumentModel.find({});
+    const documents = await DocumentModel.find({}).sort({ createdAt: -1 });
     return documents;
   } catch (error) {
     console.log(error);
@@ -61,6 +61,18 @@ export async function updateDocumentByID({
       content: content,
     });
     revalidatePath(`/documents/${id}`);
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+export async function deleteDocumentByID({ id }: { id: string }) {
+  try {
+    await connectToDatabase();
+    if (!id) throw new Error("ID is required");
+    await DocumentModel.findByIdAndDelete(id);
+    revalidatePath(`/`);
   } catch (error) {
     console.log(error);
     throw error;

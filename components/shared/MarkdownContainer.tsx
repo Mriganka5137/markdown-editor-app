@@ -22,6 +22,7 @@ const MarkdownContainer = ({ content, name, id }: dataProps) => {
     if (path === "/documents/new") {
       setName("Untitled.md");
       setMarkdown("");
+      setID("");
     }
     if (content && name && id) {
       setID(id);
