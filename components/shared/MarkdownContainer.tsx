@@ -29,7 +29,7 @@ const MarkdownContainer = ({ content, name, id }: dataProps) => {
       setMarkdown(content);
       setName(name);
     }
-  }, [content]);
+  }, [content, name, id, path]);
 
   const [viewMarkDown, setViewMarkDown] = useState(true);
 
